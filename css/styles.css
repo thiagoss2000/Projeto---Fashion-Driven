@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    width: 1366px;
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+header {
+    position: fixed;
+    width: 1366px;
+    height: 89px;
+    top: 0px;
+    background: #404EED;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+header img {
+    margin-left: 80px;
+}
+main {
+    position: relative;
+    margin-top: 89px;
+    width: 683px;
+    height: 785px;
+}
+
+.ilustracao {
+    position: absolute;
+    right: 0;
+    width: 670.49px;
+    height: 785px;
+    background-color: #404EED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.opcoes {  
+    padding-top: 15px;
+    padding-inline: 125px;
+    width: 683px;
+}
+.opcoes h3 {
+    width: calc(100% - 25px);
+    margin-left: 25px;}
+.opcoes div {
+    width: 100%;
+    height: 192px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+figure {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+figure img {
+    width: 80px;
+}
+
+.confirmar_pedido {
+    width: 100%;
+    height: 194px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.imageLink {
+    padding-left: 12px;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #818181;
+    border: none;
+}
+.Pedido {
+    width: 100%;
+    height: 40px;
+    background: #C4C4C4;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FCFCFC;
+    border: none;
+
+}
+
+.ultimos_pedidos {
+    position: relative;
+    width: 1366px;
+    height: 342px;
+    /* background: #F2F2F2; */
+    background-color: aqua;
+}
+.ultimos_pedidos h2 {
+    position: absolute;
+    top: 30.57px;
+    left: 122px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #232323;
+}
