@@ -61,6 +61,15 @@ figure {
     align-items: center;
     justify-content: space-around;
 }
+figure div {
+    width: 100px !important;
+    height: 100px !important;
+}
+.slecao_border {
+    border:solid 3px;
+    border-color: #404EED;
+    border-radius: 100%;
+}
 figure img {
     width: 80px;
 }
@@ -98,7 +107,9 @@ figure img {
     line-height: 23px;
     color: #FCFCFC;
     border: none;
-
+}
+.clicavel {
+    background-color: #404EED;
 }
 
 .ultimos_pedidos {

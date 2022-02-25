@@ -9,49 +9,50 @@
     <title>Document</title>
 </head>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <header>
         <img src="/media/FashionDriven/Logo.png">
     </header>
     <main class="opcoes">
-        <div class="modelo"><h3>Escolha o modelo</h3>
-            <figure>
-                <img src="/media/FashionDriven/tshirt.png" alt="tshirt">
+        <div id="A"><h3>Escolha o modelo</h3>
+            <figure id="A0" onclick="escolher(id, 'A', 't-shirt', 0)">
+                <div><img src="/media/FashionDriven/tshirt.png" alt="tshirt"></div>
                 <figcaption>T-shirt</figcaption>
             </figure>
-            <figure>
-                <img src="/media/FashionDriven/Camiseta.png" alt="Camiseta">
+            <figure id="A1" onclick="escolher(id, 'A', 'top-tank', 0)">
+                <div><img src="/media/FashionDriven/Camiseta.png" alt="Camiseta"></div>
                 <figcaption>Camiseta</figcaption>
             </figure>
-            <figure>
-                <img src="/media/FashionDriven/Mangalonga.png" alt="Mangalonga">
+            <figure id="A2" onclick="escolher(id, 'A', 'long', 0)">
+                <div><img src="/media/FashionDriven/Mangalonga.png" alt="Mangalonga"></div>
                 <figcaption>Manga longa</figcaption>
             </figure>
         </div>
-        <div class="gola"><h3>Escolha a gola</h3>
-            <figure>
-                <img src="/media/FashionDriven/GolaV.png" alt="GolaV">
+        <div id="B"><h3>Escolha a gola</h3>
+            <figure id="B0" onclick="escolher(id, 'B', 'v-neck', 1)">
+                <div><img src="/media/FashionDriven/GolaV.png" alt="GolaV"></div>
                 <figcaption>Gola V</figcaption>
             </figure>
-            <figure>
-                <img src="/media/FashionDriven/GolaRedonda.png" alt="GolaRedonda">
+            <figure id="B1" onclick="escolher(id, 'B', 'round', 1)">
+                <div><img src="/media/FashionDriven/GolaRedonda.png" alt="GolaRedonda"></div>
                 <figcaption>Gola Redonda</figcaption>
             </figure>
-            <figure>
-                <img src="/media/FashionDriven/GolaPolo.png" alt="GolaPolo">
+            <figure id="B2" onclick="escolher(id, 'B', 'polo', 1)">
+                <div><img src="/media/FashionDriven/GolaPolo.png" alt="GolaPolo"></div>
                 <figcaption>Gola Polo</figcaption>
             </figure>
         </div>
-        <div class="tecido"><h3>Escolha o tecido</h3>
-            <figure>
-                <img src="/media/FashionDriven/Seda.png" alt="Seda">
+        <div id="C"><h3>Escolha o tecido</h3>
+            <figure id="C0" onclick="escolher(id, 'C', 'silk', 2)">
+                <div><img src="/media/FashionDriven/Seda.png" alt="Seda"></div>
                 <figcaption>Seda</figcaption>
             </figure>
-            <figure>
-                <img src="/media/FashionDriven/Algodão.png" alt="Algodão">
+            <figure id="C1" onclick="escolher(id, 'C', 'cotton', 2)">
+                <div><img src="/media/FashionDriven/Algodão.png" alt="Algodão"></div>
                 <figcaption>Algodão</figcaption>
             </figure>
-            <figure>
-                <img src="/media/FashionDriven/Poliester.png" alt="Poliester">
+            <figure id="C2" onclick="escolher(id, 'C', 'polyester', 2)">
+                <div><img src="/media/FashionDriven/Poliester.png" alt="Poliester"></div>
                 <figcaption>Poliester</figcaption>
             </figure>
         </div>
@@ -68,6 +69,6 @@
     <div class="ultimos_pedidos"><h2>Ultimos pedidos</h2>
         
     </div>
-    
+    <script src="/src/script.js"></script>
 </body>
 </html>
