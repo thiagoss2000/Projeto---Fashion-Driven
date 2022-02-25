@@ -116,8 +116,11 @@ figure img {
     position: relative;
     width: 1366px;
     height: 342px;
-    /* background: #F2F2F2; */
-    background-color: aqua;
+    display: flex;
+    background-color: #F2F2F2;
+    padding-inline: 120px;
+
+    overflow: auto;
 }
 .ultimos_pedidos h2 {
     position: absolute;
@@ -129,5 +132,24 @@ figure img {
     font-size: 24px;
     line-height: 28px;
     text-align: center;
+    color: #232323;
+}
+.pedidos_salvos {
+    Width: 201.69px;
+    Height: max-content;
+    background-color: #FFFFFF;
+    margin-top: 73.78px;
+    margin-left: 16.5px;
+}
+.pedidos_salvos img {
+    height: 180px;
+    width: 180px;
+}
+.pedidos_salvos p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
     color: #232323;
 }

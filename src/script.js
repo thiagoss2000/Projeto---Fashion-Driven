@@ -7,6 +7,7 @@ let options = [3];
 getNome();
 function getNome() {
     nome = prompt("Qual é o seu nome?");
+    getPedidos();
 }
 
 let count = 0;
@@ -47,6 +48,31 @@ function enviarPedido() {
         "author": nome
     }
     const promise = axios.post(api, obj);
-    promise.then(alert("tudo certo"));
-    promise.catch(alert("deu bo"));
+    promise.then(confirmacao => {
+        alert("Pedido confirmado");
+    });
+    promise.catch(erro => {
+        alert("Ops, não conseguimos processar sua encomenda");
+    });
 }
+
+function getPedidos() {
+    axios.get(api).then(printPedido);
+}
+
+function printPedido(historico) {
+    let i = 0;
+    const loads = historico.data;
+    if (loads.length > 10){
+        i = loads.length - 10;
+    }
+    document.querySelector(".ultimos_pedidos").innerHTML ='<h2>Ultimos pedidos</h2>'; 
+    for (i; i < loads.length; i++) {
+        document.querySelector(".ultimos_pedidos").innerHTML += 
+        ` <figure class="pedidos_salvos" id='${loads[i].id}'>
+        <img src="${loads[i].image}" alt="image">
+        <figcaption><P><span>Criador: </span>${loads[i].owner}</P></figcaption>
+        </figure> `;
+    }
+}
+
