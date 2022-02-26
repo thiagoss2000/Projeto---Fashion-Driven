@@ -28,7 +28,7 @@ function verificaSelecoes() {
     if (count >= 3 && url_img != "") {
         const botton = document.querySelector(".Pedido");
         botton.classList.add("clicavel");
-        botton.setAttribute("onclick", "enviarPedido()");
+        botton.setAttribute("onclick", `enviarPedido('${nome}')`);
     }
 }
 
@@ -38,41 +38,68 @@ document.addEventListener("keypress", function(e) {
     }
 });
 
-function enviarPedido() {
+function enviarPedido(author) {
     const obj = {
         "model": options[0],
         "neck": options[1],
         "material": options[2],
         "image": url_img,
         "owner": nome,
-        "author": nome
-    }
+        "author": author
+    };
     const promise = axios.post(api, obj);
     promise.then(confirmacao => {
         alert("Pedido confirmado");
+        getPedidos();
     });
     promise.catch(erro => {
         alert("Ops, não conseguimos processar sua encomenda");
     });
 }
 
+function reloadPedido(id) {
+    let resultado = window.confirm("Confirmar pedido");
+    if(resultado){
+        url_img = loads[id].image;
+        options[0] = loads[id].model;
+        options[1] = loads[id].neck;
+        options[2] = loads[id].material;
+        enviarPedido(loads[id].owner);
+    }
+}
+
+
 function getPedidos() {
     axios.get(api).then(printPedido);
 }
-
+let loads;
 function printPedido(historico) {
     let i = 0;
-    const loads = historico.data;
+    loads = historico.data;
     if (loads.length > 10){
         i = loads.length - 10;
     }
-    document.querySelector(".ultimos_pedidos").innerHTML ='<h2>Ultimos pedidos</h2>'; 
+    next = loads[i].id;
+    document.querySelector(".ultimos_pedidos").innerHTML =''; 
     for (i; i < loads.length; i++) {
         document.querySelector(".ultimos_pedidos").innerHTML += 
-        ` <figure class="pedidos_salvos" id='${loads[i].id}'>
+        ` <figure class="pedidos_salvos" onclick="reloadPedido(${i})">
         <img src="${loads[i].image}" alt="image">
         <figcaption><P><span>Criador: </span>${loads[i].owner}</P></figcaption>
         </figure> `;
     }
 }
+
+let pagina = false;
+setInterval(() => {
+    if(pagina){
+        document.querySelector(".ultimos_pedidos").scrollLeft -= 1090; 
+        pagina = !pagina;     
+    }else{
+        document.querySelector(".ultimos_pedidos").scrollLeft += 1090;
+        pagina = !pagina;   
+    }
+}, 5000);
+
+
 
